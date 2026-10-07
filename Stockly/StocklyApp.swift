@@ -10,10 +10,8 @@ import SwiftData
 
 @main
 struct StocklyApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
+    private let sharedModelContainer: ModelContainer = {
+        let schema = Schema(StocklySchema.models)
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
